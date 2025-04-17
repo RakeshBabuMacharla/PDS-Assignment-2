@@ -1,0 +1,17 @@
+def remove_units(column, pattern):
+    return pd.to_numeric(column.astype(str).str.replace(pattern, "", regex=True), errors='coerce')
+
+if "Mileage" in df.columns:
+    df["Mileage"] = remove_units(df["Mileage"], r" kmpl| km/kg")
+
+if "Engine" in df.columns:
+    df["Engine"] = remove_units(df["Engine"], r" CC")
+
+if "Power" in df.columns:
+    df["Power"] = remove_units(df["Power"], r" bhp")
+
+if "New_Price" in df.columns:
+    df["New_Price"] = df["New_Price"].astype(str).str.replace(" Lakh", "").str.replace(" Cr", "")
+    df["New_Price"] = df["New_Price"].apply(lambda x: float(x)*100 if "Cr" in x else float(x) if x.replace('.', '', 1).isdigit() else np.nan)
+
+    print(df[['Mileage', 'Engine', 'Power', 'New_Price']].head())
