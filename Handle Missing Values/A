@@ -1,1 +1,2 @@
-
+a) Look for the missing values in all the columns and either impute them (replace with mean,
+median, or mode) or drop them. Justify your action for this task.
