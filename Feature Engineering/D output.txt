@@ -1,0 +1,6 @@
+                              Name  Year  Car_Age
+0  Hyundai Creta 1.6 CRDi SX Option  2015       10
+1                      Honda Jazz V  2011       14
+2                 Maruti Ertiga VDI  2012       13
+3   Audi A4 New 2.0 TDI Multitronic  2013       12
+4            Nissan Micra Diesel XV  2013       12

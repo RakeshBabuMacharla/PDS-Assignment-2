@@ -1,0 +1,9 @@
+from datetime import datetime
+# Calculate current year
+current_year = datetime.now().year
+
+# Create new feature: Car Age
+df['Car_Age'] = current_year - df['Year']
+
+# Verify the new column
+print(df[['Name', 'Year', 'Car_Age']].head())
