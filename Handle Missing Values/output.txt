@@ -1,0 +1,36 @@
+Before
+
+Unnamed: 0              0
+Name                    0
+Location                0
+Year                    0
+Kilometers_Driven       0
+Fuel_Type               0
+Transmission            0
+Owner_Type              0
+Mileage                 2
+Engine                 36
+Power                  36
+Seats                  38
+New_Price            5032
+Price                   0
+dtype: int64
+
+
+
+After
+
+Unnamed: 0           0
+Name                 0
+Location             0
+Year                 0
+Kilometers_Driven    0
+Fuel_Type            0
+Transmission         0
+Owner_Type           0
+Mileage              0
+Engine               0
+Power                0
+Seats                0
+Price                0
+dtype: int64
