@@ -1,1 +1,3 @@
-
+b) Remove the units from some of the attributes and only keep the numerical values (for
+example remove kmpl from “Mileage”, CC from “Engine”, bhp from “Power”, and lakh from
+“New_price”)
