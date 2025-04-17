@@ -1,0 +1,38 @@
+
+--- Selected Columns ---
+                               Name    Location  Year  Car_Age  Price
+0  Hyundai Creta 1.6 CRDi SX Option        Pune  2015       10  12.50
+1                      Honda Jazz V     Chennai  2011       14   4.50
+2                 Maruti Ertiga VDI     Chennai  2012       13   6.00
+3   Audi A4 New 2.0 TDI Multitronic  Coimbatore  2013       12  17.74
+4            Nissan Micra Diesel XV      Jaipur  2013       12   3.50
+
+--- Filtered (Price > 10 Lakh) ---
+                                 Name    Location  Price
+0    Hyundai Creta 1.6 CRDi SX Option        Pune  12.50
+3     Audi A4 New 2.0 TDI Multitronic  Coimbatore  17.74
+5   Toyota Innova Crysta 2.8 GX AT 8S      Mumbai  17.50
+11   Land Rover Range Rover 2.2L Pure       Delhi  27.00
+12     Land Rover Freelander 2 TD4 SE        Pune  17.50
+
+--- Top 5 Expensive Cars ---
+                                             Name    Location   Price
+3952  Land Rover Range Rover 3.0 Diesel LWB Vogue   Hyderabad  160.00
+5620                   Lamborghini Gallardo Coupe       Delhi  120.00
+5752                       Jaguar F Type 5.0 V8 S   Hyderabad  100.00
+1457              Land Rover Range Rover Sport SE       Kochi   97.07
+1917                           BMW 7 Series 740Li  Coimbatore   93.67
+
+--- Average Price by Location ---
+      Location      Price
+3   Coimbatore  15.160206
+1    Bangalore  13.482670
+7        Kochi  11.309109
+5    Hyderabad   9.997423
+4        Delhi   9.881944
+9       Mumbai   9.592546
+0    Ahmedabad   8.567248
+2      Chennai   7.958340
+10        Pune   6.951000
+6       Jaipur   5.916725
+8      Kolkata   5.733924

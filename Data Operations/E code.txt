@@ -1,0 +1,31 @@
+# Select sample columns
+selected = df[["Name", "Location", "Year", "Car_Age", "Price"]].head()
+
+# Filter rows with Price > 10 Lakh
+filtered = df[df["Price"] > 10].head()
+
+# rename
+df = df.rename(columns={"Odometer": "Kilometers_Driven"})
+
+# mutate (already done for Car_Age)
+
+# Sorted by Price (descending)
+sorted_df = df.sort_values(by="Price", ascending=False).head()
+
+# Group by Location and summarize average Price
+grouped = df.groupby("Location")["Price"].mean().reset_index().sort_values(by="Price", ascending=False)
+
+
+
+# Display outputs
+print("\n--- Selected Columns ---")
+print(selected)
+
+print("\n--- Filtered (Price > 10 Lakh) ---")
+print(filtered[["Name", "Location", "Price"]])
+
+print("\n--- Top 5 Expensive Cars ---")
+print(sorted_df[["Name", "Location", "Price"]])
+
+print("\n--- Average Price by Location ---")
+print(grouped)
