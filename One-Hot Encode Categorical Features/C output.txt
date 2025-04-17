@@ -1,0 +1,15 @@
+Fuel_Type categories: ['Diesel' 'Petrol' 'Electric']
+Transmission categories: ['Manual' 'Automatic']
+   Fuel_Diesel  Fuel_Electric  Fuel_Petrol  Transmission_Automatic  \
+0            1              0            0                       0   
+1            0              0            1                       0   
+2            1              0            0                       0   
+3            1              0            0                       1   
+4            1              0            0                       0   
+
+   Transmission_Manual  
+0                    1  
+1                    1  
+2                    1  
+3                    0  
+4                    1  

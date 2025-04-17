@@ -1,0 +1,14 @@
+# 1. Check unique categories
+print("Fuel_Type categories:", df["Fuel_Type"].unique())
+print("Transmission categories:", df["Transmission"].unique())
+
+# 2. One-hot encode 'Fuel_Type' and 'Transmission'
+df_encoded = pd.get_dummies(
+    df,
+    columns=["Fuel_Type", "Transmission"],
+    prefix=["Fuel", "Transmission"],
+    drop_first=False, # Keep all categories (optional)
+    dtype=int
+)
+# 3. Display the new columns
+print(df_encoded.filter(regex="Fuel_|Transmission_").head())
