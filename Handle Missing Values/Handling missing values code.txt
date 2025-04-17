@@ -1,0 +1,45 @@
+# Check missing values
+print(df.isnull().sum())
+
+
+# Handle missing values
+# Drop rows where 'Price' is missing (critical for prediction)
+df.dropna(subset=['Price'], inplace=True)
+
+# 1. Clean 'Engine' column: Remove 'CC' and convert to float
+df['Engine'] = df['Engine'].str.replace(' CC', '').astype(float)
+
+# 2. Clean 'Power' column: Remove 'bhp' and handle 'null' values
+df['Power'] = df['Power'].str.replace(' bhp', '')
+df['Power'] = pd.to_numeric(df['Power'], errors='coerce')  # Convert to numeric, invalid as NaN
+
+# 3. Clean 'Mileage' column: Extract numerical values and standardize unit
+def clean_mileage(mileage):
+    if isinstance(mileage, str):
+        if 'kmpl' in mileage:
+            return float(mileage.replace(' kmpl', ''))
+        elif 'km/kg' in mileage:
+            # Convert km/kg to kmpl (assuming 1 km/kg ≈ 1.4 kmpl for LPG/CNG)
+            return float(mileage.replace(' km/kg', '')) * 1.4
+    return np.nan  # If not a string or invalid
+
+df['Mileage'] = df['Mileage'].apply(clean_mileage)
+
+# 4. Impute numerical columns with median
+numerical_cols = ['Engine', 'Power', 'Mileage']
+for col in numerical_cols:
+    df[col] = df[col].fillna(df[col].median())
+
+# 5. Impute 'Seats' with mode (discrete value)
+df['Seats'] = df['Seats'].fillna(df['Seats'].mode()[0])
+
+# 6. Drop 'New_Price' (too many missing values)
+df.drop('New_Price', axis=1, inplace=True)
+
+# 7. Handle categorical columns (if any missing)
+categorical_cols = ['Fuel_Type', 'Transmission', 'Owner_Type']
+for col in categorical_cols:
+    df[col] = df[col].fillna(df[col].mode()[0])
+
+# Verify no missing values remain
+print(df.isnull().sum())
